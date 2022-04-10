@@ -18,6 +18,7 @@ class BookType(DjangoObjectType):
 class Query(graphene.ObjectType):
     all_books = graphene.List(BookType)
     book = graphene.Field(BookType, book_id=graphene.Int())
+    review = graphene.Field(BookType, book_review=graphene.Int())
 
     # The two query resolvers query the database using the Django model to execute the query and return the results.
     def resolve_all_books(self, info, **kwargs):  # get all the data from this table
@@ -25,6 +26,9 @@ class Query(graphene.ObjectType):
 
     def resolve_book(self, info, book_id):  # get only specific data from this table
         return Book.objects.get(pk=book_id)
+
+    def resolve_review(self, info, book_review):  # filter data that match with review number from this table
+        return Book.objects.filter(review__exact=book_review)
 
 
 # The BookInput class defines fields similar to our Book model object to allow the client to add or change the data
