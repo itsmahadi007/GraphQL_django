@@ -1,6 +1,6 @@
 aniso8601==7.0.0
 asgiref==3.5.0
-Django==3.2.12
+Django==3.2.14
 graphene-django==2.15.0
 graphene==2.1.9
 graphql-core==2.3.2
