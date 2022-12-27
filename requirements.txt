@@ -9,7 +9,7 @@ pip==22.0.4
 promise==2.3
 pytz==2022.1
 Rx==1.6.1
-setuptools==47.1.0
+setuptools==65.5.1
 singledispatch==3.7.0
 six==1.16.0
 sqlparse==0.4.2
